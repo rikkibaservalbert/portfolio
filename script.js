@@ -1,24 +1,17 @@
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    padding:0;
-    background:#f4f4f4;
+const text =
+"BS Information Technology Student | Future IT Professional";
+
+let i = 0;
+
+function typing() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+    }
 }
 
-header{
-    background:#0078ff;
-    color:white;
-    text-align:center;
-    padding:40px;
-}
+typing();
 
-section{
-    background:white;
-    margin:20px;
-    padding:20px;
-    border-radius:10px;
-}
-
-h2{
-    color:#0078ff;
-}
+document.getElementById("year").textContent =
+new Date().getFullYear();
