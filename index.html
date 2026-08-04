@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rikki Valbert Baser</title>
+    <title>Rikki Valbert Baser | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav>
+
     <div class="logo">RVB</div>
 
     <ul>
@@ -17,21 +21,36 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <button id="themeToggle">🌙 Dark</button>
+
 </nav>
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <img src="images/profile.jpg" alt="Profile">
+        <img src="images/profile.png" alt="Rikki">
 
         <h1>Rikki Valbert Baser</h1>
 
         <h2 id="typing"></h2>
 
-        <div class="buttons">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <p>
+            Building modern digital experiences through creativity,
+            technology, and continuous learning.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
+
+            <a href="#contact" class="btn-outline">
+                Contact Me
+            </a>
+
         </div>
 
     </div>
@@ -42,12 +61,15 @@
 
     <h2>About Me</h2>
 
-    <div class="card">
+    <div class="glass-card">
+
         <p>
-            Welcome to my portfolio. I enjoy exploring technology,
-            creating digital solutions, and continuously learning new skills.
-            This website showcases my work, projects, and journey.
+            Welcome to my portfolio. I am passionate about technology,
+            modern web design, and creating meaningful digital solutions.
+            I continuously explore new tools and skills while building
+            projects that improve user experiences.
         </p>
+
     </div>
 
 </section>
@@ -56,14 +78,13 @@
 
     <h2>Projects</h2>
 
-    <div class="projects-grid">
+    <div class="project-grid">
 
         <div class="project-card">
             <h3>ReldevDocs</h3>
 
             <p>
-                Document Tracking and Workflow Management System
-                with Digital Verification.
+                Document Tracking and Workflow System with Digital Verification.
             </p>
         </div>
 
@@ -71,8 +92,15 @@
             <h3>Portfolio Website</h3>
 
             <p>
-                Responsive personal portfolio built with HTML,
-                CSS, and JavaScript.
+                Modern responsive portfolio deployed using GitHub Pages.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Future Projects</h3>
+
+            <p>
+                Upcoming personal and professional development projects.
             </p>
         </div>
 
@@ -84,15 +112,29 @@
 
     <h2>Contact</h2>
 
-    <div class="card">
-        <p>Email: rikkibaservalbert@gmail.com</p>
-        <p>GitHub: github.com/rikkibaservalbert</p>
+    <div class="glass-card">
+
+        <p>📧 rikkibaservalbert@gmail.com</p>
+
+        <p>
+            💼 LinkedIn:
+            <a href="https://www.linkedin.com/in/rikkibaservalbert"
+                target="_blank">
+                rikkibaservalbert
+            </a>
+        </p>
+
     </div>
 
 </section>
 
 <footer>
-    © <span id="year"></span> Rikki Valbert Baser
+
+    <p>
+        © <span id="year"></span>
+        Rikki Valbert Baser
+    </p>
+
 </footer>
 
 <script src="script.js"></script>
