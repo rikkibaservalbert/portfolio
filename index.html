@@ -1,61 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikki Valbert Baser</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+<nav>
+    <div class="logo">RVB</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <img src="images/profile.jpg" alt="Profile">
+
         <h1>Rikki Valbert Baser</h1>
-        <p>BS Information Technology Student</p>
-    </header>
 
-    <section>
-        <h2>About Me</h2>
+        <h2 id="typing"></h2>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="card">
         <p>
-            I am a BSIT student at AMA Computer College.
-            I am passionate about learning technology,
-            web development, and information systems.
+            Welcome to my portfolio. I enjoy exploring technology,
+            creating digital solutions, and continuously learning new skills.
+            This website showcases my work, projects, and journey.
         </p>
-        <img src="images/profile.jpg" width="200" alt="young man in an orange shirt wearing sunglasses seated against a neutral background holding a red phone with a calm confident expression">
-    </section>
+    </div>
 
-    <section>
-        <h2>Education</h2>
-        <ul>
-            <li>AMA Computer College - BSIT</li>
-        </ul>
-    </section>
+</section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Microsoft Office</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>GitHub</li>
-        </ul>
-    </section>
+<section id="projects">
 
-    <section>
-        <h2>Projects</h2>
+    <h2>Projects</h2>
 
-        <h3>ReldevDocs</h3>
+    <div class="projects-grid">
 
-        <p>
-            Document Tracking and Workflow System
-            for FJ8 Real Estate.
-        </p>
-    </section>
+        <div class="project-card">
+            <h3>ReldevDocs</h3>
 
-    <section>
-        <h2>Contact</h2>
+            <p>
+                Document Tracking and Workflow Management System
+                with Digital Verification.
+            </p>
+        </div>
 
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+
+            <p>
+                Responsive personal portfolio built with HTML,
+                CSS, and JavaScript.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+    <div class="card">
         <p>Email: rikkibaservalbert@gmail.com</p>
-        <p>Phone: 0976046458</p>
-    </section>
+        <p>GitHub: github.com/rikkibaservalbert</p>
+    </div>
+
+</section>
+
+<footer>
+    © <span id="year"></span> Rikki Valbert Baser
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
-```
