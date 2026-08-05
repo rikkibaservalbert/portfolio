@@ -2,10 +2,10 @@
 :root {
     --bg-main: #0B1120;
     --bg-card: #0F172A;
-    --bg-card-hover: #1E293B;
+    --bg-card-hover: #182437;
     --border-color: #334155;
-    --primary-accent: #9CA3AF; /* Gray */
-    --primary-hover: #6B7280;  /* Darker Gray */
+    --primary-accent: #47649f; /* Gray */
+    --primary-hover: #46494e;  /* Darker Gray */
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --shadow-color: rgba(0, 0, 0, 0.4);
@@ -16,9 +16,9 @@
     --bg-main: #F1F5F9;
     --bg-card: #FFFFFF;
     --bg-card-hover: #F8FAFC;
-    --border-color: #E2E8F0;
-    --primary-accent: #9CA3AF; /* Gray */
-    --primary-hover: #6B7280;  /* Darker Gray */
+    --border-color: #72777c;
+    --primary-accent: #484a4f; /* Gray */
+    --primary-hover: #464749;  /* Darker Gray */
     --text-main: #0F172A;
     --text-muted: #64748B;
     --shadow-color: rgba(0, 0, 0, 0.08);
@@ -179,7 +179,25 @@ body {
     align-items: center;
     gap: 2.5rem;
 }
+.profile-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
 .profile-img-placeholder {
     width: 160px;
     height: 160px;

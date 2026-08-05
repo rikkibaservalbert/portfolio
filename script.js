@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
         "BS Information Technology",
         "IT Support Specialist",
+        "Front-End Developer",
         "Aspiring Full-Stack Developer"
     ];
     let phraseIndex = 0;
