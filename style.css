@@ -4,12 +4,8 @@
     --bg-card: #0F172A;
     --bg-card-hover: #1E293B;
     --border-color: #334155;
-    
-    /* UPDATED: Accent colors replaced from Blue to Light Slate/Gray */
-    --primary-accent: #CBD5E1;     /* Light Gray Accent */
-    --primary-hover: #E2E8F0;      /* Lighter Gray Hover */
-    --accent-subtle: rgba(203, 213, 225, 0.12); /* Gray glow/tag fill */
-    
+    --primary-accent: #9CA3AF; /* Gray */
+    --primary-hover: #6B7280;  /* Darker Gray */
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --shadow-color: rgba(0, 0, 0, 0.4);
@@ -20,13 +16,9 @@
     --bg-main: #F1F5F9;
     --bg-card: #FFFFFF;
     --bg-card-hover: #F8FAFC;
-    --border-color: #CBD5E1;
-    
-    /* UPDATED: Light Mode Gray Accents */
-    --primary-accent: #475569;     /* Slate Gray Accent */
-    --primary-hover: #1E293B;      /* Darker Slate Hover */
-    --accent-subtle: rgba(71, 85, 105, 0.1);
-    
+    --border-color: #E2E8F0;
+    --primary-accent: #9CA3AF; /* Gray */
+    --primary-hover: #6B7280;  /* Darker Gray */
     --text-main: #0F172A;
     --text-muted: #64748B;
     --shadow-color: rgba(0, 0, 0, 0.08);
@@ -124,7 +116,7 @@ body {
 
 .icon-btn:hover {
     background-color: var(--primary-accent);
-    color: var(--bg-main);
+    color: #FFF;
     border-color: var(--primary-accent);
 }
 
@@ -188,16 +180,6 @@ body {
     gap: 2.5rem;
 }
 
-.profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover; /* <-- THIS FIXES THE STRETCHING */
-    object-position: center; /* Keeps your face centered */
-    border: 3px solid var(--primary-accent);
-    box-shadow: 0 0 20px rgba(203, 213, 225, 0.15);
-}
-
 .profile-img-placeholder {
     width: 160px;
     height: 160px;
@@ -209,7 +191,7 @@ body {
     font-size: 4rem;
     color: var(--primary-accent);
     border: 3px solid var(--primary-accent);
-    box-shadow: 0 0 20px rgba(203, 213, 225, 0.15);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 .hero-text {
@@ -217,7 +199,7 @@ body {
 }
 
 .badge {
-    background-color: var(--accent-subtle);
+    background-color: rgba(59, 130, 246, 0.15);
     color: var(--primary-accent);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
@@ -225,7 +207,6 @@ body {
     font-weight: 600;
     display: inline-block;
     margin-bottom: 0.75rem;
-    border: 1px solid var(--border-color);
 }
 
 .hero-text h1 {
@@ -290,9 +271,8 @@ body {
 
 .btn-primary {
     background-color: var(--primary-accent);
-    color: var(--bg-main);
+    color: #FFF;
     border: 1px solid var(--primary-accent);
-    font-weight: 600;
 }
 
 .btn-primary:hover {
@@ -308,7 +288,7 @@ body {
 .btn-outline:hover {
     border-color: var(--primary-accent);
     color: var(--primary-accent);
-    background-color: var(--accent-subtle);
+    background-color: rgba(59, 130, 246, 0.05);
 }
 
 /* --- STATS GRID --- */
@@ -484,9 +464,8 @@ body {
 }
 
 .tech-tag {
-    background-color: var(--accent-subtle);
+    background-color: rgba(59, 130, 246, 0.1);
     color: var(--primary-accent);
-    border: 1px solid var(--border-color);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-size: 0.78rem;
@@ -556,9 +535,8 @@ body {
 /* --- CERTIFICATES SECTION --- */
 .subtitle-badge {
     font-size: 0.85rem;
-    background-color: var(--accent-subtle);
+    background-color: rgba(59, 130, 246, 0.15);
     color: var(--primary-accent);
-    border: 1px solid var(--border-color);
     padding: 0.2rem 0.6rem;
     border-radius: 6px;
 }
