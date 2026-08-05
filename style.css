@@ -192,7 +192,8 @@ body {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover; /* <-- THIS FIXES THE STRETCHING */
+    object-position: center; /* Keeps your face centered */
     border: 3px solid var(--primary-accent);
     box-shadow: 0 0 20px rgba(203, 213, 225, 0.15);
 }
