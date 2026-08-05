@@ -11,7 +11,17 @@
     --shadow-color: rgba(0, 0, 0, 0.4);
     --transition-speed: 0.3s;
 }
+/* Dark Mode */
+[data-theme="dark"] .badge {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #ffffff;
+}
 
+/* Light Mode */
+[data-theme="light"] .badge {
+    background-color: #E5E7EB;
+    color: #1E293B;
+}
 [data-theme="light"] {
     --bg-main: #F1F5F9;
     --bg-card: #FFFFFF;
@@ -20,7 +30,7 @@
     --primary-accent: #484a4f; /* Gray */
     --primary-hover: #464749;  /* Darker Gray */
     --text-main: #0F172A;
-    --text-muted: #64748B;
+    --text-muted: #39424f;
     --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
