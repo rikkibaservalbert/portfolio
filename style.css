@@ -4,8 +4,9 @@
     --bg-card: #0F172A;
     --bg-card-hover: #182437;
     --border-color: #334155;
-    --primary-accent: #47649f; /* Gray */
-    --primary-hover: #46494e;  /* Darker Gray */
+    --primary-accent: #324a72;
+    --primary-accent2: #df7777;
+    --primary-hover: #46494e;
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --shadow-color: rgba(0, 0, 0, 0.4);
@@ -245,7 +246,7 @@ body {
 }
 
 .subtitle {
-    color: var(--primary-accent);
+    color: var(--primary-accent2);
     font-size: 1.05rem;
     font-weight: 500;
     min-height: 1.6rem;

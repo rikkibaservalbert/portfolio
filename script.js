@@ -36,10 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. TYPING ANIMATION ---
     const typingText = document.getElementById('typing-text');
     const phrases = [
-        "BS Information Technology",
+        "BS in Information Technology",
         "IT Support Specialist",
         "Front-End Developer",
-        "Aspiring Full-Stack Developer"
+        "Aspiring Full-Stack Developer",
+        "Graphic Designer",
     ];
     let phraseIndex = 0;
     let charIndex = 0;
