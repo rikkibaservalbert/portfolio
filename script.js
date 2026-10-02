@@ -1,126 +1,141 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* Rikki Valbert Baser Portfolio JavaScript */
 
-    // --- 1. DARK / LIGHT MODE TOGGLE ---
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
+(() => {
+  "use strict";
 
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        htmlElement.setAttribute('data-theme', newTheme);
-        themeToggleBtn.innerHTML = newTheme === 'dark' 
-            ? '<i class="fa-solid fa-moon"></i>' 
-            : '<i class="fa-solid fa-sun"></i>';
-    });
-
-    // --- 2. MOBILE HAMBURGER MENU ---
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.innerHTML = navLinks.classList.contains('active')
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    // Close menu when link is clicked
-    document.querySelectorAll('.nav-item').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        });
-    });
-
-    // --- 3. TYPING ANIMATION ---
-    const typingText = document.getElementById('typing-text');
-    const phrases = [
-        "BS in Information Technology",
-        "IT Support Specialist",
-        "Front-End Developer",
-        "Aspiring Full-Stack Developer",
-        "Graphic Designer",
+  function initPortfolio() {
+    // Auto-typing hero title
+    const typedText = document.getElementById("typed-text");
+    const roles = [
+      "Graphic Designer",
+      "IT Support Specialist",
+      "Content & Social Media Manager"
     ];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
 
-    function typeEffect() {
-        const currentPhrase = phrases[phraseIndex];
-        
-        if (isDeleting) {
-            typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
+    if (typedText) {
+      let roleIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function typeRole() {
+        const role = roles[roleIndex];
+        typedText.textContent = role.slice(0, charIndex);
+
+        if (!deleting) {
+          if (charIndex < role.length) {
+            charIndex += 1;
+            window.setTimeout(typeRole, 65);
+          } else {
+            deleting = true;
+            window.setTimeout(typeRole, 1400);
+          }
+        } else if (charIndex > 0) {
+          charIndex -= 1;
+          window.setTimeout(typeRole, 32);
         } else {
-            typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          window.setTimeout(typeRole, 250);
         }
+      }
 
-        let typeSpeed = isDeleting ? 40 : 80;
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            typeSpeed = 2000; // Pause at end
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
-        }
-
-        setTimeout(typeEffect, typeSpeed);
+      typeRole();
     }
-    typeEffect();
 
-    // --- 4. SCROLL REVEAL ANIMATION ---
-    const revealElements = document.querySelectorAll('.reveal');
+    // Mobile navigation
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    function checkReveal() {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100;
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
 
-        revealElements.forEach(el => {
-            const revealTop = el.getBoundingClientRect().top;
-            if (revealTop < windowHeight - revealPoint) {
-                el.classList.add('active');
-            }
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
         });
+      });
     }
 
-    window.addEventListener('scroll', checkReveal);
-    checkReveal(); // Trigger once on load
+    // Scroll reveal; make content visible if IntersectionObserver isn't supported.
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 
-    // --- 5. ANIMATED STAT COUNTERS ---
-    const counters = document.querySelectorAll('.counter');
-    let hasCounted = false;
-
-    function startCounters() {
-        const statsSection = document.getElementById('stats');
-        const sectionPos = statsSection.getBoundingClientRect().top;
-        const screenPos = window.innerHeight;
-
-        if (sectionPos < screenPos && !hasCounted) {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = 200; // lower is faster
-                const increment = target / speed;
-
-                const updateCount = () => {
-                    count += Math.max(increment, 1);
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count);
-                        setTimeout(updateCount, 100);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
-            });
-            hasCounted = true;
-        }
+      revealElements.forEach((element) => revealObserver.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("visible"));
     }
 
-    window.addEventListener('scroll', startCounters);
-    startCounters(); // Trigger once on load
-});
+    // Gentle hover tilt on cards and gallery images.
+    const canHover = window.matchMedia &&
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (canHover) {
+      document.querySelectorAll(".tilt-card").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+          const rect = card.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          const rotateY = (x - 0.5) * 6;
+          const rotateX = (0.5 - y) * 6;
+          card.style.setProperty("--tilt-transform", `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`);
+          card.style.transform = card.style.getPropertyValue("--tilt-transform");
+        });
+        card.addEventListener("pointerleave", () => {
+          card.style.removeProperty("--tilt-transform");
+          card.style.transform = "";
+        });
+      });
+    }
+
+    // Dynamic footer year
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPortfolio, { once: true });
+  } else {
+    initPortfolio();
+  }
+
+  // Theme toggle: dark by default, remember the user's explicit selection.
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+  function applyTheme(theme) {
+    const isLight = theme === "light";
+    document.body.classList.toggle("light-mode", isLight);
+    if (themeMeta) themeMeta.setAttribute("content", isLight ? "#f8fafc" : "#090a0e");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+      themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+      themeToggle.setAttribute("title", isLight ? "Switch to dark mode" : "Switch to light mode");
+    }
+  }
+
+  if (themeToggle) {
+    let savedTheme = null;
+    try { savedTheme = localStorage.getItem("theme"); } catch (_) {}
+    // Respect a saved choice; otherwise begin in dark mode.
+    applyTheme(savedTheme === "light" ? "light" : "dark");
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.classList.contains("light-mode") ? "dark" : "light";
+      applyTheme(nextTheme);
+      try { localStorage.setItem("theme", nextTheme); } catch (_) {}
+    });
+  }
+})();
