@@ -139,3 +139,67 @@
     });
   }
 })();
+
+
+/* =====================================
+   PORTFOLIO INTRO LOADER
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("introLoader");
+  const introRoles = document.querySelectorAll(".intro-role");
+
+  if (!loader) return;
+
+  let activeRole = 0;
+  let finished = false;
+
+  const startTime = Date.now();
+  const minimumDuration = 2800;
+
+  const roleTimer = introRoles.length > 1
+    ? setInterval(() => {
+        if (finished) return;
+
+        introRoles[activeRole].classList.remove("active");
+
+        activeRole = (activeRole + 1) % introRoles.length;
+
+        introRoles[activeRole].classList.add("active");
+      }, 750)
+    : null;
+
+  function hideIntro() {
+    if (finished) return;
+
+    finished = true;
+
+    if (roleTimer) {
+      clearInterval(roleTimer);
+    }
+
+    loader.classList.add("is-hidden");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 900);
+  }
+
+  function finishWhenReady() {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minimumDuration - elapsed);
+
+    setTimeout(hideIntro, remaining);
+  }
+
+  if (document.readyState === "complete") {
+    finishWhenReady();
+  } else {
+    window.addEventListener("load", finishWhenReady, {
+      once: true
+    });
+  }
+
+  // Fallback so the intro cannot remain stuck indefinitely.
+  setTimeout(hideIntro, 10000);
+});
