@@ -1,386 +1,380 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rikki Valbert Baser | Portfolio</title>    
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rikki Valbert Baser — Graphic Designer, IT Support Specialist, and Content & Social Media Manager.">
+  <meta name="theme-color" content="#0a0b0f">
+  <title>Rikki Valbert Baser — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="noise"></div>
 
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <!--<a href="#hero" class="logo"><img src="images/favicon.png" alt="Rikki Logo" class="nav-logo"></a>-->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Rikki Valbert Baser home">
+        <span class="brand-mark">RV</span>
+        <span>Rikki<span class="brand-dot">.</span></span>
+      </a>
 
-            <nav class="nav-links" id="nav-links">
-                <a href="#about" class="nav-item">About</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#experience" class="nav-item">Experience</a>
-                <a href="#project" class="nav-item">Project</a>
-                <a href="#education" class="nav-item">Education</a>
-                <a href="#certificates" class="nav-item">Certificates</a>
-                <a href="#contact" class="nav-item">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Project</a>
+        <a href="#gallery">Designs</a>
+        <a href="#contact">Contact</a>
+        
+        <div class="theme-switch" aria-label="Theme switcher">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+            <!-- Sun Icon (Visible in Light Mode) -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (Visible in Dark Mode) -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Main Container Layout -->
-    <main class="dashboard-container">
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Available for creative & technical work
+          </div>
 
-        <!-- Hero Section -->
-<section id="hero" class="card hero-card reveal">
-    <div class="hero-content">
+          <h1>
+            Hi, I'm
+            <span class="gradient-text">Rikki Valbert Baser</span>
+          </h1>
 
-        <div class="profile-img-container">
-            <img src="images/profile.jpg" alt="Rikki Valbert Baser" class="profile-img">
+          <div class="hero-role" aria-live="polite">
+            <span class="role-prefix">I'm a </span><span id="typed-text"></span><span class="cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            I combine technical problem-solving with visual design to build useful digital experiences,
+            support teams, and create content that looks polished and performs with purpose.
+          </p>
+
+          <div class="hero-actions">
+            <a href="Files/RikkiValbert-RESUME.pdf" download class="btn btn-primary">
+              Download CV
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="#gallery" class="btn btn-ghost">
+              View Work
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Graphic Design</span>
+            <span>IT Support</span>
+            <span>Social Media</span>
+          </div>
         </div>
 
-        <div class="hero-text">
-                    <h1>Rikki Valbert Baser</h1>
-                    <p class="subtitle"><span id="typing-text"></span><span class="cursor">&nbsp;</span></p>
-                    <div class="hero-info">
-                        <p><i class="fa-solid fa-location-dot"></i> Tarlac, Philippines</p>
-                        <p><i class="fa-solid fa-envelope"></i> rikkibaservalbert@gmail.com</p>
-                        <p><i class="fa-solid fa-phone"></i> 0976-345-1932</p>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="https://www.linkedin.com/in/rikkibaservalbert/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/rikkibaservalbert" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="#hero" class="btn btn-outline"><i class="fa-solid fa-globe"></i> Portfolio</a>
-                        <a href="mailto:rikkibaservalbert@gmail.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Email Me</a>
-                        <a href="files/Resume-RikkiValbert.pdf" download="Resume-RikkiValbert.pdf" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download Resume</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="hero-visual reveal reveal-delay">
+          <div class="profile-orbit orbit-a"></div>
+          <div class="profile-orbit orbit-b"></div>
 
-        <!-- Stats Counter Section -->
-        <section id="stats" class="stats-grid reveal">
-            <div class="card stat-card">
-                <i class="fa-solid fa-briefcase stat-icon"></i>
-                <h3 class="counter" data-target="7">0</h3>
-                <p>+ Work Experiences</p>
+          <div class="profile-glow"></div>
+          <div class="profile-card glass">
+            <div class="profile-image-wrap">
+              <img src="Images/profile.jpg" alt="Rikki Valbert Baser" class="profile-image">
             </div>
-            <div class="card stat-card">
-                <i class="fa-solid fa-diagram-project stat-icon"></i>
-                <h3 class="counter" data-target="1">0</h3>
-                <p>Major Capstone Project</p>
+            <div class="profile-caption">
+              <div>
+                <span class="caption-label">Based in</span>
+                <strong>Philippines</strong>
+              </div>
+              <div class="caption-badge">RV</div>
             </div>
-            <div class="card stat-card">
-                <i class="fa-solid fa-certificate stat-icon"></i>
-                <h3 class="counter" data-target="7">0</h3>
-                <p>+ Cisco Certifications</p>
-            </div>
-            <div class="card stat-card">
-                <i class="fa-solid fa-user-check stat-icon"></i>
-                <h3 class="counter" data-target="3">0</h3>
-                <p>+ Years Professional Exp.</p>
-            </div>
-        </section>
+          </div>
 
-        <!-- About Section -->
-        <section id="about" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-user"></i> About Me</h2>
+          <div class="floating-card floating-card-top glass">
+            <span class="floating-icon">✦</span>
+            <div>
+              <small>Focus</small>
+              <strong>Design × IT</strong>
             </div>
-            <p class="about-text">
-                Dedicated and detail-oriented professional with experience in administration, sales, marketing, graphic design, and IT support. Skilled in office administration, documentation, troubleshooting, customer service, and digital technologies. Passionate about technology, continuous learning, and delivering high-quality solutions that contribute to organizational success.
+          </div>
+
+          <div class="floating-card floating-card-bottom glass">
+            <span class="floating-icon">⌁</span>
+            <div>
+              <small>Current role</small>
+              <strong>Content & Social</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">01 / ABOUT</span>
+          <h2>Two sides. One <span class="gradient-text">workflow.</span></h2>
+          <p>
+            My background sits between technology, operations, and creative production —
+            helping me understand both how systems work and how people experience them.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="info-card glass reveal tilt-card">
+            <div class="card-number">01</div>
+            <div class="card-icon">⌘</div>
+            <h3>Technical & Operations</h3>
+            <p>
+              Practical IT support and operations skills focused on troubleshooting,
+              systems, data, and keeping everyday workflows moving.
             </p>
-        </section>
 
-        <!-- Technical Skills Section -->
-        <section id="skills" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-laptop-code"></i> Technical Skills</h2>
+            <div class="skill-pills">
+              <span>Network Support</span>
+              <span>System Administration</span>
+              <span>Hardware Troubleshooting</span>
+              <span>Database Management</span>
+              <span>Laravel / PHP</span>
+              <span>MySQL</span>
             </div>
-            <div class="skills-wrapper">
-                
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-headset"></i> IT Support</h3>
-                    <div class="skill-tags">
-                        <span class="skill-card"><i class="fa-solid fa-wrench"></i> Computer Troubleshooting</span>
-                        <span class="skill-card"><i class="fa-solid fa-microchip"></i> Hardware Installation</span>
-                        <span class="skill-card"><i class="fa-solid fa-download"></i> Software Installation</span>
-                        <span class="skill-card"><i class="fa-solid fa-network-wired"></i> Network Basics</span>
-                        <span class="skill-card"><i class="fa-solid fa-users-gear"></i> User Account Management</span>
-                    </div>
-                </div>
+          </article>
 
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-file-lines"></i> Office Productivity</h3>
-                    <div class="skill-tags">
-                        <span class="skill-card"><i class="fa-solid fa-file-word"></i> Microsoft Word</span>
-                        <span class="skill-card"><i class="fa-solid fa-file-excel"></i> Excel</span>
-                        <span class="skill-card"><i class="fa-solid fa-file-powerpoint"></i> PowerPoint</span>
-                        <span class="skill-card"><i class="fa-solid fa-envelope-open"></i> Outlook</span>
-                        <span class="skill-card"><i class="fa-brands fa-google"></i> Google Workspace</span>
-                    </div>
-                </div>
+          <article class="info-card glass reveal tilt-card reveal-delay">
+            <div class="card-number">02</div>
+            <div class="card-icon">✦</div>
+            <h3>Creative & Design</h3>
+            <p>
+              Visual content and social-media production with an emphasis on consistent
+              branding, clear messaging, and fast content execution.
+            </p>
 
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-palette"></i> Design Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-card"><i class="fa-solid fa-paint-brush"></i> Canva</span>
-                        <span class="skill-card"><i class="fa-solid fa-image"></i> Adobe Photoshop</span>
-                        <span class="skill-card"><i class="fa-solid fa-video"></i> Adobe Premiere Pro</span>
-                        <span class="skill-card"><i class="fa-solid fa-scissors"></i> CapCut</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-code"></i> Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-card"><i class="fa-brands fa-html5"></i> HTML</span>
-                        <span class="skill-card"><i class="fa-brands fa-css3-alt"></i> CSS</span>
-                        <span class="skill-card"><i class="fa-brands fa-js"></i> JavaScript</span>
-                        <span class="skill-card"><i class="fa-brands fa-php"></i> PHP</span>
-                        <span class="skill-card"><i class="fa-brands fa-laravel"></i> Laravel</span>
-                        <span class="skill-card"><i class="fa-solid fa-database"></i> MySQL</span>
-                        <span class="skill-card"><i class="fa-solid fa-gears"></i> REST APIs</span>
-                        <span class="skill-card"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-list-check"></i> Other Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-card"><i class="fa-solid fa-keyboard"></i> Data Entry</span>
-                        <span class="skill-card"><i class="fa-solid fa-folder-open"></i> Documentation</span>
-                        <span class="skill-card"><i class="fa-solid fa-box-archive"></i> Records Management</span>
-                        <span class="skill-card"><i class="fa-solid fa-inbox"></i> Email Management</span>
-                        <span class="skill-card"><i class="fa-solid fa-magnifying-glass"></i> Research</span>
-                        <span class="skill-card"><i class="fa-solid fa-cash-register"></i> POS Operations</span>
-                    </div>
-                </div>
-
+            <div class="skill-pills">
+              <span>Social Media Branding</span>
+              <span>Adobe Photoshop</span>
+              <span>Premiere Pro</span>
+              <span>Canva</span>
+              <span>Video Editing</span>
+              <span>Content Calendars</span>
+              <span>Marketing Strategist</span>
             </div>
-        </section>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Work Experience Section -->
-        <section id="experience" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-clock-rotate-left"></i> Work Experience</h2>
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">02 / TOOLKIT</span>
+          <h2>Tools I use to <span class="gradient-text">get things done.</span></h2>
+        </div>
+
+        <div class="toolkit-grid">
+          <div class="toolkit-card glass reveal">
+            <span class="tool-number">01</span>
+            <h3>IT & Systems</h3>
+            <p>Support, hardware, software, databases, productivity systems, and web technologies.</p>
+            <div class="tool-list">
+              <span>Windows</span>
+              <span>Microsoft 365</span>
+              <span>Google Workspace</span>
+              <span>PHP / Laravel</span>
+              <span>MySQL</span>
+              <span>HTML / CSS / JS</span>
             </div>
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 2026 – Present</span>
-                        <h3>IT Support Specialist (Intern)</h3>
-                        <h4>Pelozden RSS, Clark Pampanga</h4>
-                        <ul class="responsibilities-list">
-                            <li>Technical support</li>
-                            <li>Hardware and software maintenance</li>
-                            <li>Troubleshooting</li>
-                            <li>User account management</li>
-                            <li>Documentation</li>
-                            <li>Preventive maintenance</li>
-                            <li>Asset inventory management</li>
-                        </ul>
-                    </div>
-                </div>
+          </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">November 2024 – February 2025</span>
-                        <h3>Passenger Assistant / Ground Crew (Station Loader/ Wingman)</h3>
-                        <h4>Topserve – PAGSS, Clark International Airport</h4>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">July 2023 – December 2023</span>
-                        <h3>Marketing Staff / Graphic Artist</h3>
-                        <h4>JVP Jelexie Bakeshop</h4>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">October 2022 – May 2023</span>
-                        <h3>Admin Staff / Customer Service Representative</h3>
-                        <h4>JGES Wholesale Trading</h4>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">March 2022 – August 2022</span>
-                        <h3>Sales Area Maintenance (Store Crew)</h3>
-                        <h4>7-Eleven</h4>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">August 2021 – December 2021</span>
-                        <h3>Admin Staff / Assistant Management</h3>
-                        <h4>Greg's Kitchen</h4>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 2021 – August 2021</span>
-                        <h3>Admin Staff / Assistant Computer Technician</h3>
-                        <h4>Astral Link BPO</h4>
-                    </div>
-                </div>
-
+          <div class="toolkit-card glass reveal reveal-delay">
+            <span class="tool-number">02</span>
+            <h3>Creative Stack</h3>
+            <p>Design and short-form editing tools for social content, campaigns, and visual communication.</p>
+            <div class="tool-list">
+              <span>Photoshop</span>
+              <span>Canva</span>
+              <span>Premiere Pro</span>
+              <span>CapCut</span>
+              <span>Vegas Pro</span>
+              <span>Content Planning</span>
             </div>
-        </section>
+          </div>
 
-        <!-- Featured Project Section -->
-        <section id="project" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-star"></i> Featured Project</h2>
+          <div class="toolkit-card glass reveal reveal-delay-2">
+            <span class="tool-number">03</span>
+            <h3>Collaboration</h3>
+            <p>Organized communication across clients, teams, schedules, revisions, and deliverables.</p>
+            <div class="tool-list">
+              <span>Microsoft Teams</span>
+              <span>Slack</span>
+              <span>Discord</span>
+              <span>Zoom</span>
+              <span>Email Management</span>
+              <span>Documentation</span>
             </div>
-            <div class="project-card">
-                <div class="project-img-placeholder">
-                    <i class="fa-solid fa-file-shield"></i>
-                    <span>FJ8 Reldev Dashboard Preview</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">03 / FEATURED PROJECT</span>
+          <h2>Built to make <span class="gradient-text">documents move.</span></h2>
+        </div>
+
+        <article class="project-card glass tilt-card reveal">
+          <div class="project-content">
+            <div class="project-topline">
+              <span class="project-tag">Cloud System</span>
+              <span class="project-stack">PHP · Laravel · MySQL · JS</span>
+            </div>
+
+            <h3>FJ8 Reldev</h3>
+            <p>
+              Cloud-Based Document Tracking and Workflow Automation System with real-time
+              status updates, document routing, centralized search, audit logs, and RBAC permissions.
+            </p>
+
+            <div class="project-features">
+              <span>Role-Based Access</span>
+              <span>Workflow Automation</span>
+              <span>Real-Time Notifications</span>
+              <span>Audit Logs</span>
+            </div>
+
+            <a class="text-link" href="https://fj8reldev.site" target="_blank" rel="noopener noreferrer">
+              Visit live demo
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="project-visual" aria-hidden="true">
+            <div class="dashboard-window">
+              <div class="window-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="dashboard-body">
+                <div class="dash-sidebar"></div>
+                <div class="dash-main">
+                  <div class="dash-line large"></div>
+                  <div class="dash-line"></div>
+                  <div class="dash-line short"></div>
+                  <div class="dash-cards">
+                    <div></div><div></div><div></div>
+                  </div>
+                  <div class="dash-table">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
                 </div>
-                <div class="project-details">
-                    <h3>FJ8 Reldev</h3>
-                    <p class="project-subtitle">Cloud-Based Document Tracking and Workflow Automation System</p>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">REST APIs</span>
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">Bootstrap</span>
-                    </div>
-
-                    <h4>Key Features:</h4>
-                    <div class="features-grid">
-                        <span><i class="fa-solid fa-check"></i> Document Tracking</span>
-                        <span><i class="fa-solid fa-check"></i> Workflow Automation</span>
-                        <span><i class="fa-solid fa-check"></i> Role-Based Access Control</span>
-                        <span><i class="fa-solid fa-check"></i> Email Notifications</span>
-                        <span><i class="fa-solid fa-check"></i> SMS Notifications</span>
-                        <span><i class="fa-solid fa-check"></i> Audit Logs</span>
-                        <span><i class="fa-solid fa-check"></i> Search System</span>
-                        <span><i class="fa-solid fa-check"></i> Digital Repository</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="https://github.com" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <!-- Education Section -->
-        <section id="education" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-            </div>
-            <div class="education-grid">
-                
-                <div class="edu-card">
-                    <span class="edu-date">2023 – 2026</span>
-                    <h3>Bachelor of Science in Information Technology</h3>
-                    <h4>AMA University – Tarlac City</h4>
-                </div>
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-heading gallery-heading reveal">
+          <div>
+            <span class="section-kicker">04 / GRAPHIC DESIGN</span>
+            <h2>Selected <span class="gradient-text">social designs.</span></h2>
+          </div>
+          <p></p>
+        </div>
 
-                <div class="edu-card">
-                    <span class="edu-date">2020 – 2022</span>
-                    <h3>Bachelor of Science in Computer Science (Undergraduate)</h3>
-                    <h4>Tarlac State University</h4>
-                    <p class="coursework"><strong>Relevant Coursework:</strong> Programming, Networking</p>
-                </div>
+        <div class="gallery-grid">
+          <img src="Images/jpegs/jpeg1.jpg" alt="Social Media Design 1" class="gallery-item reveal">
+          <img src="Images/jpegs/jpeg2.jpg" alt="Social Media Design 2" class="gallery-item reveal reveal-delay">
+          <img src="Images/jpegs/jpeg3.jpg" alt="Social Media Design 3" class="gallery-item reveal reveal-delay-2">
+          <img src="Images/jpegs/jpeg4.jpg" alt="Social Media Design 4" class="gallery-item reveal">
+          <img src="Images/jpegs/jpeg5.jpg" alt="Social Media Design 5" class="gallery-item reveal reveal-delay">
+          <img src="Images/jpegs/jpeg6.jpg" alt="Social Media Design 6" class="gallery-item reveal reveal-delay-2">
+          <img src="Images/jpegs/jpeg7.jpg" alt="Social Media Design 7" class="gallery-item reveal">
+          <img src="Images/jpegs/jpeg8.jpg" alt="Social Media Design 8" class="gallery-item reveal reveal-delay">
+          <img src="Images/jpegs/jpeg9.jpg" alt="Social Media Design 9" class="gallery-item reveal reveal-delay-2">
+          <img src="Images/jpegs/jpeg10.jpg" alt="Social Media Design 10" class="gallery-item reveal">
+          <img src="Images/jpegs/jpeg11.jpg" alt="Social Media Design 11" class="gallery-item reveal reveal-delay">
+          <img src="Images/jpegs/jpeg12.jpg" alt="Social Media Design 12" class="gallery-item reveal reveal-delay-2">
+        </div>
+      </div>
+    </section>
 
-                <div class="edu-card">
-                    <span class="edu-date">2018 – 2020</span>
-                    <h3>Senior High School ICT</h3>
-                    <h4>AMA University</h4>
-                    <p class="coursework"><strong>Relevant Coursework:</strong> Visual Graphic Design, CSS, Web Development Foundations</p>
-                </div>
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card glass reveal">
+          <div>
+            <span class="section-kicker">05 / CONTACT</span>
+            <h2>Let's build something <span class="gradient-text">useful.</span></h2>
+            <p>
+              Open to design, content, IT support, and digital-production opportunities.
+            </p>
+          </div>
 
-            </div>
-        </section>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:rikkibaservalbert@gmail.com">
+              Email me
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rikkibaservalbert/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
 
-        <!-- Certificates Section -->
-        <section id="certificates" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-award"></i> Certificates</h2>
-                <span class="subtitle-badge">Cisco Networking Academy</span>
-            </div>
-            <div class="scrollable-cards">
-                <div class="cert-card"><i class="fa-solid fa-shield-halved"></i><p>Security and Connectivity Support</p></div>
-                <div class="cert-card"><i class="fa-solid fa-robot"></i><p>Introduction to Modern AI</p></div>
-                <div class="cert-card"><i class="fa-solid fa-network-wired"></i><p>CCNA Enterprise Networking, Security and Automation</p></div>
-                <div class="cert-card"><i class="fa-solid fa-route"></i><p>CCNA Switching, Routing and Wireless Essentials</p></div>
-                <div class="cert-card"><i class="fa-solid fa-user-shield"></i><p>Security Operations and the Defense Analyst</p></div>
-                <div class="cert-card"><i class="fa-solid fa-chart-line"></i><p>Data and Tools for Defense Analysts</p></div>
-                <div class="cert-card"><i class="fa-solid fa-lock"></i><p>Network Security</p></div>
-            </div>
-        </section>
+        <footer class="site-footer">
+          <span>© <span id="year"></span> Rikki Valbert Baser</span>
+          <span>Designed & built with HTML · CSS · JavaScript</span>
+        </footer>
+      </div>
+    </section>
+  </main>
 
-        <!-- Contact Section -->
-        <section id="contact" class="card reveal">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-paper-plane"></i> Contact Me</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p><strong><i class="fa-solid fa-user"></i> Name:</strong> Rikki Valbert Baser</p>
-                    <p><strong><i class="fa-solid fa-envelope"></i> Email:</strong> rikkibaservalbert@gmail.com</p>
-                    <p><strong><i class="fa-solid fa-phone"></i> Phone:</strong> 0976-345-1932</p>
-                    <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Tarlac, Philippines</p>
-                    
-                    <div class="contact-buttons">
-                        <a href="mailto:rikkibaservalbert@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
-                        <a href="https://www.linkedin.com/in/rikkibaservalbert/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/rikkibaservalbert" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <meta property="og:title" content="Rikki Valbert Baser — Portfolio">
+  <meta property="og:description" content="Graphic Designer, IT Support Specialist, and Content & Social Media Manager.">
+  <meta property="og:image" content="Images/profile.jpg">
+  <meta property="og:type" content="website">
 
-    </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+    <div class="lightbox-counter" id="lightbox-counter">1 / 10</div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Rikki Valbert Baser</p>
-        <p class="footer-sub">All rights reserved.</p>
-    </footer>
-
-    <!-- JS Link -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
