@@ -1497,3 +1497,187 @@ body.light-mode .lightbox { background: rgba(15,23,42,.90); }
   .theme-toggle { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { body, .theme-toggle { transition: none; } }
+
+
+/* =====================================
+   FUTURISTIC PORTFOLIO INTRO
+===================================== */
+
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  background-color: #031126;
+  background-image: url("images/intro/intro-cityscape.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #f5f8ff;
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+.intro-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 12, 30, 0.16) 0%,
+      rgba(2, 12, 30, 0.04) 45%,
+      rgba(2, 12, 30, 0.28) 100%
+    );
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.intro-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(220, 235, 255, 0.22);
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-radius: 50%;
+  animation: introSpin 1s linear infinite;
+  filter: drop-shadow(0 0 9px rgba(160, 205, 255, 0.7));
+  margin-bottom: 35px;
+}
+
+.intro-roles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 28px);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.intro-role {
+  color: rgba(240, 246, 255, 0.5);
+  font-size: clamp(12px, 1.35vw, 19px);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  transition:
+    color 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+.intro-role.active {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(200, 225, 255, 0.55);
+}
+
+.intro-arrow {
+  color: rgba(225, 238, 255, 0.75);
+  font-size: clamp(15px, 1.6vw, 22px);
+}
+
+.intro-bottom {
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.intro-name {
+  color: #f4f7ff;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-shadow: 0 0 12px rgba(190, 220, 255, 0.35);
+}
+
+.intro-loading {
+  color: rgba(200, 218, 244, 0.65);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+@keyframes introSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-loader {
+    background-position: center;
+  }
+
+  .intro-content {
+    padding: 20px;
+  }
+
+  .intro-spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 28px;
+  }
+
+  .intro-roles {
+    flex-direction: column;
+    gap: 13px;
+    max-width: 320px;
+  }
+
+  .intro-arrow {
+    transform: rotate(90deg);
+    font-size: 14px;
+  }
+
+  .intro-role {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .intro-bottom {
+    bottom: 6%;
+  }
+
+  .intro-name {
+    font-size: 16px;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-spinner {
+    animation: none;
+  }
+
+  .intro-loader {
+    transition-duration: 0.01ms;
+  }
+}
