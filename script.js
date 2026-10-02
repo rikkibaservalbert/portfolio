@@ -203,3 +203,144 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fallback so the intro cannot remain stuck indefinitely.
   setTimeout(hideIntro, 10000);
 });
+
+
+/* =====================================
+   SELECTED SOCIAL DESIGNS LIGHTBOX
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryImages = Array.from(
+    document.querySelectorAll(".gallery-grid .gallery-item")
+  );
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxCounter = document.getElementById("lightbox-counter");
+
+  const closeButton = document.querySelector(".lightbox-close");
+  const prevButton = document.querySelector(".lightbox-prev");
+  const nextButton = document.querySelector(".lightbox-next");
+
+  if (
+    !galleryImages.length ||
+    !lightbox ||
+    !lightboxImage ||
+    !closeButton ||
+    !prevButton ||
+    !nextButton
+  ) {
+    return;
+  }
+
+  let currentIndex = 0;
+  let touchStartX = 0;
+
+  function showImage(index) {
+    currentIndex =
+      (index + galleryImages.length) % galleryImages.length;
+
+    const selectedImage = galleryImages[currentIndex];
+
+    lightboxImage.src = selectedImage.src;
+    lightboxImage.alt = selectedImage.alt;
+
+    if (lightboxCounter) {
+      lightboxCounter.textContent =
+        `${currentIndex + 1} / ${galleryImages.length}`;
+    }
+  }
+
+  function openLightbox(index) {
+    showImage(index);
+
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    lightboxImage.src = "";
+  }
+
+  function showPrevious() {
+    showImage(currentIndex - 1);
+  }
+
+  function showNext() {
+    showImage(currentIndex + 1);
+  }
+
+  // Open the selected design.
+  galleryImages.forEach((image, index) => {
+    image.style.cursor = "zoom-in";
+
+    image.addEventListener("click", () => {
+      openLightbox(index);
+    });
+  });
+
+  // Navigation buttons.
+  prevButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showPrevious();
+  });
+
+  nextButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showNext();
+  });
+
+  // Close button.
+  closeButton.addEventListener("click", closeLightbox);
+
+  // Close when clicking the dark background.
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation.
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPrevious();
+    }
+
+    if (event.key === "ArrowRight") {
+      showNext();
+    }
+  });
+
+  // Mobile swipe navigation.
+  lightbox.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const difference = touchEndX - touchStartX;
+
+    if (Math.abs(difference) < 50) return;
+
+    if (difference > 0) {
+      showPrevious();
+    } else {
+      showNext();
+    }
+  }, { passive: true });
+});
